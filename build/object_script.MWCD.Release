@@ -1,0 +1,13 @@
+release/SensitivityAnalysis.o
+release/main.o
+release/mainwindow.o
+release/tool.o
+release/QDrawWindow.o
+release/QDWData.o
+release/PlotGraph.o
+release/GraphData.o
+release/TorusGraph.o
+release/MWCDModel.o
+release/MWCDParams.o
+release/moc_Sensitivityanalysis.o
+release/moc_mainwindow.o

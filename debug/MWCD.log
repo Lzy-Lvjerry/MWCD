@@ -1,0 +1,20 @@
+﻿  mainwindow.cpp
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\data.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\data_cf.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\datac.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\datac_cf.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\cont.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\plot.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\surf.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\volume.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\vect.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\prim.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\other.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\canvas_cf.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\mgl.h(561,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\mgl.h(1017,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\mgl.h(1470,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\mgl.h(1848,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\wnd.h(39,42): warning C4100: “val”: 未引用的形参
+C:\Users\Administrator\OneDrive\programming\Project\MWCD\mathgl\include\mgl2\wnd.h(39,26): warning C4100: “id”: 未引用的形参
+LINK : fatal error LNK1104: 无法打开文件“mgl-qt5.lib”

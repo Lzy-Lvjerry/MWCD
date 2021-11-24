@@ -1,0 +1,13 @@
+debug/SensitivityAnalysis.o
+debug/main.o
+debug/mainwindow.o
+debug/tool.o
+debug/QDrawWindow.o
+debug/QDWData.o
+debug/PlotGraph.o
+debug/GraphData.o
+debug/TorusGraph.o
+debug/MWCDModel.o
+debug/MWCDParams.o
+debug/moc_Sensitivityanalysis.o
+debug/moc_mainwindow.o
