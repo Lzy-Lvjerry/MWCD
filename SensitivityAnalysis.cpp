@@ -6,7 +6,7 @@
 #include <QModelIndex>
 #include <QMap>
 #include <QClipboard>
-
+#include <functional>
 const int TABLEDATANUM = 1000;
 
 SensitivityAnalysis::SensitivityAnalysis( QWidget *parent ) :
@@ -53,11 +53,54 @@ void SensitivityAnalysis::on_bt_startSens_clicked()
     double forStep = ( sensMax - sensMin ) / TABLEDATANUM;
 
     qDebug() << "Clicked bt_startSens: " << MWCDModel::getMWCDModel();
-
+    auto model = std::bind( MWCDModel::getMWCDModel );
     analyticParams = ANALYTICPARAMS( ui->cb_selectVar->currentIndex() );
     double breakTime;
     int    row = 1;
-    double paramTemp;
+
+
+    MWCDParams paramsTemp = model().getMWCDParams();
+
+    switch( analyticParams )
+    {
+        case AP_FI:
+        {
+            itemModel->setItem( 0, 1, new QStandardItem( QString::fromLocal8Bit( "¦µ(f)" ) ) );
+            break;
+        }
+        case AP_Q:
+        {
+            itemModel->setItem( 0, 1, new QStandardItem( "q(10^4*m^3/d)" ) );
+            break;
+        }
+        case AP_S:
+        {
+            itemModel->setItem( 0, 1, new QStandardItem( "S(f)" ) );
+            break;
+        }
+        case AP_H2:
+        {
+            itemModel->setItem( 0, 1, new QStandardItem( "h2(m)" ) );
+            break;
+        }
+        case AP_HP:
+        {
+            itemModel->setItem( 0, 1, new QStandardItem( "hp(m)" ) );
+            break;
+        }
+        case AP_R1:
+        {
+            itemModel->setItem( 0, 1, new QStandardItem( "r1(m)" ) );
+            break;
+        }
+        case AP_RE:
+        {
+            itemModel->setItem( 0, 1, new QStandardItem( "re(m)" ) );
+            break;
+        }
+        default:
+            break;
+    }
 
     for( double i = sensMin; i < sensMax; i += forStep, ++row )
     {
@@ -66,55 +109,47 @@ void SensitivityAnalysis::on_bt_startSens_clicked()
             // ¿×Ï¶¶È
             case AP_FI:
             {
-                itemModel->setItem( 0, 1, new QStandardItem( QString::fromLocal8Bit( "¦µ(f)" ) ) );
-                _upMWCDModel->setParamFi( i );
+                model().setParamFi( i );
                 break;
             }
             // ¸ß¶Èh2
             case AP_H2:
             {
-                itemModel->setItem( 0, 1, new QStandardItem( "h2(m)" ) );
-                _upMWCDModel->setParamH2( i );
+                model().setParamH2( i );
                 break;
             }
             // hp
             case AP_HP:
             {
-                itemModel->setItem( 0, 1, new QStandardItem( "hp(m)" ) );
-                _upMWCDModel->setParamHp( i );
+                model().setParamHp( i );
                 break;
             }
             // S
             case AP_S:
             {
-                itemModel->setItem( 0, 1, new QStandardItem( "S(f)" ) );
-                _upMWCDModel->setParamS( i );
+                model().setParamS( i );
                 break;
             }
             // re
             case AP_RE:
             {
-                itemModel->setItem( 0, 1, new QStandardItem( "re(m)" ) );
-                _upMWCDModel->setParamRe( i );
+                model().setParamRe( i );
                 break;
             }
             // r1
             case AP_R1:
             {
-                itemModel->setItem( 0, 1, new QStandardItem( "r1(m)" ) );
-                _upMWCDModel->setParamR1( i );
+                model().setParamR1( i );
                 break;
             }
             // q
             case AP_Q:
             {
-                itemModel->setItem( 0, 1, new QStandardItem( "q(10^4*m^3/d)" ) );
-                _upMWCDModel->setParamQ( i );
+                model().setParamQ( i );
                 break;
             }
         }
-        breakTime =  _upMWCDModel->getBreakthroughTime();
-        qDebug() << *_upMWCDModel;
+        breakTime = model().getModelResult();
         itemModel->setItem( row, 0, new QStandardItem(  QString::number( breakTime, 'f' ) )  );
         itemModel->setItem( row, 1, new QStandardItem( QString::number( i, 'f' ) ) );
 
@@ -127,10 +162,11 @@ void SensitivityAnalysis::on_bt_startSens_clicked()
 
 
     }
+    model().setMWCDParams( paramsTemp );
     std::string xText = std::string( ui->cb_selectVar->currentText().toLocal8Bit() );
     _pDrawWindow->drawByPlot( xData, yData, xText, xText, "t(d)", false, false );
     ui->tv_resultTable->setModel( itemModel );
-
+    qDebug() << model();
 }
 
 void SensitivityAnalysis::on_bt_saveGraph_clicked()

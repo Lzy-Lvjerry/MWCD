@@ -30,7 +30,26 @@ public:
 
     MWCDParams( const MWCDParams & params );
     ~MWCDParams();
-
+    MWCDParams & operator=( const MWCDParams & params )
+    {
+        if( this != &params )
+        {
+            _K   = params._K;
+            _hp  = params._hp;
+            _rg  = params._rg;
+            _u   = params._u;
+            _rw  = params._rw;
+            _r1  = params._r1;
+            _S   = params._S;
+            _re  = params._re;
+            _q   = params._q;
+            _h2  = params._h2;
+            _fi  = params._fi;
+            _Swi = params._Swi;
+            _Sgr = params._Sgr;
+        }
+        return *this;
+    }
 
     bool hasParamIsZero();
 

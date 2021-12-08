@@ -6,8 +6,9 @@
 #include <tuple>
 #include <iostream>
 #include <QDebug>
+#include "model.h"
 #include "MWCDParams.h"
-class MWCDModel final
+class MWCDModel final : public model<double>
 {
     friend QDebug operator <<( QDebug os, const MWCDModel &model )
     {
@@ -52,25 +53,49 @@ public:
     void setParamFi( const double & );
 
 
+    double getParamFi()const;
+
+
     void setParamH2( const double & );
+
+
+    double getParamH2()const;
 
 
     void setParamK( const double & );
 
 
+    double getParamK()const;
+
+
     void setParamHp( const double & );
+
+
+    double getParamHp()const;
 
 
     void setParamR1( const double & );
 
 
+    double getParamR1()const;
+
+
     void setParamS( const double & );
+
+
+    double getParamS()const;
 
 
     void setParamRe( const double & );
 
 
+    double getParamRe()const;
+
+
     void setParamQ( const double & );
+
+
+    double getParamQ()const;
 
 
     void setModelParams( double K, double hp, double rg,
@@ -80,6 +105,15 @@ public:
 
 
     bool paramsHasZero();
+
+
+    MWCDParams getMWCDParams()const;
+
+
+    void setMWCDParams( const MWCDParams & );
+
+
+    double getModelResult()override;
 
 
 private:
